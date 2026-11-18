@@ -97,6 +97,39 @@ export default function FaqReferencePage() {
             </div>
           </div>
         </FaqItem>
+
+        {/* 감사 로그 보존/제한 */}
+        <FaqItem id="audit-log" q="감사 로그 기간이나 용량은 제한이 없나요?">
+          <p className="text-[11px] text-gray-400">세션 문의 · 2026.11.18</p>
+          <p>
+            모든 Enterprise+ 고객의 감사 로그는 <strong className="text-gray-900">최대 2년</strong>간 용량 제한 없이 보관됩니다.<br />
+            규정 준수를 위해 더 오래 보존해야 한다면, 감사 로그를 <strong className="text-gray-900">내보내기(Export)</strong> 하여 외부에 저장할 수 있습니다.
+          </p>
+
+          <div className="mt-3">
+            <Label text="내보내기 시 제한" color="indigo" />
+            <ul className="mt-2 space-y-1.5 text-[13px] text-gray-600 leading-relaxed">
+              <li className="flex items-start gap-2"><Dot /> <span><strong className="text-gray-900">UI 날짜 필터</strong> : 한 번에 조회 가능한 최대 날짜 범위는 <strong className="text-gray-900">31일</strong></span></li>
+              <li className="flex items-start gap-2"><Dot /> <span><strong className="text-gray-900">CSV 내보내기</strong> : 최대 <strong className="text-gray-900">100만 행(row)</strong>까지</span></li>
+              <li className="flex items-start gap-2"><Dot /> <span><strong className="text-gray-900">검색 쿼리 로그</strong> : 최근 <strong className="text-gray-900">90일</strong>간의 데이터가 포함되며, 하루 최대 <strong className="text-gray-900">50회</strong>까지 내보내기 가능</span></li>
+            </ul>
+          </div>
+
+          <p className="mt-3 text-[13px] text-gray-500 flex items-start gap-1.5">
+            <Dot />
+            <span>
+              참고 ·{' '}
+              <a
+                href="https://slack.com/intl/ko-kr/help/articles/360000394286-Slack%EC%9D%98-%EA%B0%90%EC%82%AC-%EB%A1%9C%EA%B7%B8"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#635BFF] font-medium hover:underline break-all"
+              >
+                Slack의 감사 로그 (도움말 센터)
+              </a>
+            </span>
+          </p>
+        </FaqItem>
       </div>
     </div>
   );
