@@ -3,6 +3,9 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   output: "export",
   basePath: "/enterpriseplus",
+  experimental: {
+    agentUpgrade: false,
+  },
   images: {
     unoptimized: true,
   },

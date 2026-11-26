@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import CacheClearModal from '@/components/CacheClearModal';
 import SsoExceptionModal from '@/components/SsoExceptionModal';
+import EntBibleModal from '@/components/EntBibleModal';
 
 const navItems = [
   {
@@ -60,6 +61,7 @@ export default function Sidebar() {
   const [collapsed, setCollapsed] = useState(false);
   const [cacheOpen, setCacheOpen] = useState(false);
   const [ssoExcOpen, setSsoExcOpen] = useState(false);
+  const [bibleOpen, setBibleOpen] = useState(false);
 
   useEffect(() => {
     document.body.classList.toggle('sidebar-collapsed', collapsed);
@@ -70,6 +72,7 @@ export default function Sidebar() {
       const detail = (e as CustomEvent).detail;
       if (detail === 'cache') setCacheOpen(true);
       else if (detail === 'sso-exception') setSsoExcOpen(true);
+      else if (detail === 'bible') setBibleOpen(true);
     };
     window.addEventListener('open-modal', onOpenModal);
     return () => window.removeEventListener('open-modal', onOpenModal);
@@ -227,10 +230,21 @@ export default function Sidebar() {
           </svg>
           캐시 초기화 방법
         </button>
+        <button
+          type="button"
+          onClick={() => setBibleOpen(true)}
+          className="w-full flex items-center gap-2 px-3 py-2 mb-0.5 rounded-lg text-[13px] font-medium text-[var(--sidebar-text)] hover:bg-white/5 hover:text-white transition-all text-left"
+        >
+          <svg className="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+          </svg>
+          Slack Ent+ Bible
+        </button>
       </div>
     </nav>
     <SsoExceptionModal open={ssoExcOpen} onClose={() => setSsoExcOpen(false)} />
     <CacheClearModal open={cacheOpen} onClose={() => setCacheOpen(false)} />
+    <EntBibleModal open={bibleOpen} onClose={() => setBibleOpen(false)} />
     </>
   );
 }
