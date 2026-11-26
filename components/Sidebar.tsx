@@ -67,6 +67,13 @@ export default function Sidebar() {
     document.body.classList.toggle('sidebar-collapsed', collapsed);
   }, [collapsed]);
 
+  // 모바일(<768px)에서 홈 첫 화면으로 이동하면 사이드바를 닫는다. 데스크톱은 그대로.
+  useEffect(() => {
+    if (pathname === '/' && window.matchMedia('(max-width: 767px)').matches) {
+      setCollapsed(true);
+    }
+  }, [pathname]);
+
   useEffect(() => {
     const onOpenModal = (e: Event) => {
       const detail = (e as CustomEvent).detail;
