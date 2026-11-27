@@ -67,7 +67,7 @@ export default function SsoExceptionModal({ open, onClose }: { open: boolean; on
                   '사용자가 이메일과 비밀번호로 로그인하고 SSO를 우회하도록 허용',
                   '모든 조직 소유자',
                   '모든 게스트',
-                  '특정 멤버',
+                  '특정 사용자',
                 ].map((t) => (
                   <li key={t} className="flex items-start gap-2 text-[13px] text-gray-700 leading-relaxed">
                     <svg className="w-4 h-4 text-emerald-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -79,7 +79,7 @@ export default function SsoExceptionModal({ open, onClose }: { open: boolean; on
               </ul>
             </Step>
             <Step n="3">
-              <Pill>특정 멤버</Pill>를 선택한 뒤 <Pill>추가</Pill>에서 해당 멤버를 선택합니다.
+              <Pill>특정 사용자</Pill>를 선택한 뒤 <Pill>추가</Pill>에서 해당 멤버를 선택합니다.
             </Step>
           </div>
 
