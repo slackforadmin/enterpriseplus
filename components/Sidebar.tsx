@@ -17,7 +17,7 @@ const navItems = [
     href: '/kickoff',
   },
   {
-    label: 'Day 1 조직 초기 설정',
+    label: '조직 초기 설정',
     href: '/day1-setup',
   },
   {

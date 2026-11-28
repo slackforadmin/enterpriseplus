@@ -66,7 +66,7 @@ export default function KickoffPage() {
             href="/day1-setup"
             className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#635BFF] text-white rounded-lg text-sm font-medium hover:bg-[#4F46E5] transition-colors"
           >
-            다음: Day 1 조직 초기 설정 →
+            다음: 조직 초기 설정 →
           </Link>
         </div>
       </div>
